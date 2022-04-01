@@ -1,0 +1,79 @@
+@import "bootstrap";
+
+
+
+.title {
+  text-align: center;
+  background-color: #EBE4DB;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  height: 130px;
+  border-radius: 10px;
+}
+
+.subtitle {
+  background-color: #EBE4DB;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 80px;
+  margin-right: 700px;
+}
+
+.list {
+  margin-top: 40px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.btn-primary {
+  background-color: #809581;
+  margin-top: 30px;
+  color: whitesmoke;
+  border: none;
+  margin-left: 80px;
+}
+
+.btn-primary:hover {
+  background-color: #EBE4DB;
+  color: black;
+  border: none;
+}
+
+.img {
+  width : 215px;
+  height : 150px;
+  border-radius: 10px;
+  margin: 10px;
+  margin-left: 700px;
+}
+
+.image {
+  width : 600px;
+  height : 350px;
+  border-radius: 10px;
+  margin-left: 680px;
+}
+
+p {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-block-end: auto;
+}
+
+.button {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.field {
+  margin-left: 80px;
+  margin-right: 80px;
+  background-color: #EBE4DB;
+  border-radius: 10px;
+}
+
+.actions {
+  margin-left: 80px;
+  margin-right: 80px;
+}

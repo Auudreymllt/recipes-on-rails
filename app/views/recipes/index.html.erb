@@ -1,35 +1,40 @@
 <p id="notice"><%= notice %></p>
+<br/>
+<div class="title">
+<h1>Recipes on Rails</h1>
+</div>
 
-<h1>Recipes</h1>
+<br/>
 
+<div class="subtitle">
+<h4>liste de recette</h4>
+</div>
+
+<div class="New">
+<%= link_to 'Nouvelle Recette', new_recipe_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="list">
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Ingredients</th>
-      <th>Steps</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
+
+
+<br/>
 
   <tbody>
+
     <% @recipes.each do |recipe| %>
       <tr>
+
         <td><%= recipe.title %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.ingredients %></td>
-        <td><%= recipe.steps %></td>
-        <td><%= recipe.image %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to 'Voir', recipe, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Supprimer', recipe, class: 'btn btn-primary', method: :delete, data: { confirm: 'etes-vous sur?' } %></td>
+        <td><%= image_tag recipe.image, class:'img' if recipe.image.start_with?('http') %></td>
+       </tr>
+        <th colspan="5"></th>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
