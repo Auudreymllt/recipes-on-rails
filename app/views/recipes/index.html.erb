@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-<br/>
+<p id"notice"><%= notice %></p>
+
 <div class="title">
 <h1>Recipes on Rails</h1>
 </div>
@@ -7,7 +7,7 @@
 <br/>
 
 <div class="subtitle">
-<h4>liste de recette</h4>
+<h2>liste de recette</h2>
 </div>
 
 <div class="New">
@@ -17,24 +17,23 @@
 <div class="list">
 <table>
 
+</br>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
 
 
-<br/>
-
-  <tbody>
-
-    <% @recipes.each do |recipe| %>
-      <tr>
-
-        <td><%= recipe.title %></td>
-        <td><%= link_to 'Voir', recipe, class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Supprimer', recipe, class: 'btn btn-primary', method: :delete, data: { confirm: 'etes-vous sur?' } %></td>
-        <td><%= image_tag recipe.image, class:'img' if recipe.image.start_with?('http') %></td>
-       </tr>
-        <th colspan="5"></th>
-    <% end %>
-  </tbody>
-</table>
+<div class="row row-cols-1 row-cols-md-3 g-3">
+  <% @recipes.each do |recipe| %>
+    <div class="col mb-3">
+      <div class="card">
+        <%= image_tag recipe.image, class:'card-img-top' if recipe.image.start_with?('http') %>
+        <div class="card-body">
+          <h5 class="card-title"><%= recipe.title %></h5>
+          <%= link_to 'Voir', recipe, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

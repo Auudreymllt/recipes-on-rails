@@ -8,33 +8,40 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <p>
 
-  <%= @recipe.title %>
+          <h2 class="title-recipe"><%= @recipe.title %></h3>
+        </p>
+
+        </br>
+
+        <p>
+          <h3 class="description"><%= @recipe.description %></h3>
+        </p>
+
+        <p>
+          <strong class="ingredients">Ingredients:</strong>
+          <%= @recipe.ingredients %>
+        </p>
+
+        <p>
+          <strong class="recette">Recette:</strong>
+          <%= @recipe.steps %>
+        </p>
+
+        <%= link_to 'Edit', edit_recipe_path(@recipe), class: 'btn btn-primary' %>
+        <%= link_to 'Back', recipes_path, class: 'btn btn-primary' %>
+      </div>
+    <div class="col">
+</br>
+<p>
+  <div class="image">
+     <%= image_tag @recipe.image, class:'rounded float-end' %>
+  </div>
 </p>
 
-<p>
-
-  <%= image_tag @recipe.image, class:'image' %>
-
-</p>
-
-<p>
-
-  <%= @recipe.description %>
-</p>
-
-<p>
-  <strong>Ingredients:</strong>
-  <%= @recipe.ingredients %>
-</p>
-
-<p>
-  <strong>Recette:</strong>
-  <%= @recipe.steps %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_recipe_path(@recipe), class: 'btn btn-primary' %>
-<%= link_to 'Back', recipes_path, class: 'btn btn-primary' %>
+</div>
+</div>
